@@ -4,10 +4,11 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ConsultationModule } from './consultation/consultation.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, ConsultationModule],
+  imports: [BrowserModule, AppRoutingModule, ConsultationModule, SharedModule],
   providers: [],
   bootstrap: [AppComponent]
 })

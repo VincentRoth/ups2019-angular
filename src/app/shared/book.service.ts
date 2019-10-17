@@ -13,4 +13,16 @@ export class BookService {
       author: 'Author'
     };
   }
+
+  getBooks(): Book[] {
+    return [
+      {
+      title: 'Title',
+      author: 'Author'
+      },{
+      title: 'Title2',
+      author: 'Author2'
+      }
+  ];
+  }
 }
