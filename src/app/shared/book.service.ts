@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Book } from './book';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BookService {
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   getBook(): Book {
     return {
@@ -14,16 +16,7 @@ export class BookService {
     };
   }
 
-  getBooks(): Book[] {
-    return [
-      {
-        title: 'Title',
-        author: 'Author'
-      },
-      {
-        title: 'Title2',
-        author: 'Author2'
-      }
-    ];
+  getBooks(): Observable<Book[]> {
+    return this.http.get<Book[]>('/api/books');
   }
 }
