@@ -17,12 +17,13 @@ export class BookService {
   getBooks(): Book[] {
     return [
       {
-      title: 'Title',
-      author: 'Author'
-      },{
-      title: 'Title2',
-      author: 'Author2'
+        title: 'Title',
+        author: 'Author'
+      },
+      {
+        title: 'Title2',
+        author: 'Author2'
       }
-  ];
+    ];
   }
 }

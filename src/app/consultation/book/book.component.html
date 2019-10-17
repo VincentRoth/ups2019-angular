@@ -1,1 +1,5 @@
-<p>{{book.title}}</p>
+<p>
+  <span appUppercase>{{book.title}}</span> -
+  {{book.author}}
+  <button (click)="onDelete()">Delete</button>
+</p>

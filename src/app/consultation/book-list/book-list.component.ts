@@ -15,4 +15,9 @@ export class BookListComponent implements OnInit {
   ngOnInit() {
     this.books = this.bookService.getBooks();
   }
+
+  onBookDelete(book: Book) {
+    const bookIndex = this.books.indexOf(book);
+    this.books.splice(bookIndex, 1);
+  }
 }

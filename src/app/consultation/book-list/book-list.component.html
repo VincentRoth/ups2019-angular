@@ -1,3 +1,1 @@
-<ul>
-  <li *ngFor="let book of books" appUppercase>{{book.title}}</li>
-</ul>
+<app-book *ngFor="let book of books" [book]=book (deleteEvent)="onBookDelete($event)"></app-book>
