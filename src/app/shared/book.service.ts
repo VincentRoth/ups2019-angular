@@ -9,11 +9,8 @@ import { Observable } from 'rxjs';
 export class BookService {
   constructor(private http: HttpClient) {}
 
-  getBook(): Book {
-    return {
-      title: 'Title',
-      author: 'Author'
-    };
+  getBook(id: number): Observable<Book> {
+    return this.http.get<Book>(`/api/books/${id}`);
   }
 
   getBooks(): Observable<Book[]> {

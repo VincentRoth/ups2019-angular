@@ -1,5 +1,5 @@
-<p>
-  <span appUppercase>{{book.title}}</span> -
+<p *ngIf="book">
+  <a appUppercase [routerLink]="['book',book.id]">{{book.title}}</a> -
   {{book.author}}
   <button (click)="onDelete()">Delete</button>
 </p>
