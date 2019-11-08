@@ -12,12 +12,17 @@ export class BookListComponent implements OnInit {
 
   constructor(private bookService: BookService) {}
 
-  ngOnInit() {
+  private loadBooks() {
     this.bookService.getBooks().subscribe(books => (this.books = books));
   }
 
+  ngOnInit() {
+    this.loadBooks();
+  }
+
   onBookDelete(book: Book) {
-    const bookIndex = this.books.indexOf(book);
-    this.books.splice(bookIndex, 1);
+    this.bookService.delete(book.id).subscribe({
+      complete: () => this.loadBooks()
+    });
   }
 }

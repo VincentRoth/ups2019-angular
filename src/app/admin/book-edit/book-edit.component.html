@@ -1,1 +1,8 @@
-<p>book-edit works!</p>
+<form (ngSubmit)="onSubmit()" #bookForm="ngForm">
+  <label for="title">Title</label>
+  <input type="text" id="title" [(ngModel)]="book.title" name="title" required #title="ngModel">
+  <p *ngIf="title.errors?.required">Please fill a title.</p>
+  <label for="author">Author</label>
+  <input type="text" id="author" [(ngModel)]="book.author" name="author">
+  <button type="submit" [disabled]="bookForm.form.invalid">Submit</button>
+</form>

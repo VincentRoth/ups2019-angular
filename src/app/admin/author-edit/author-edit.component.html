@@ -1,1 +1,9 @@
-<p>author-edit works!</p>
+<form (ngSubmit)="onSubmit()" [formGroup]="authorForm">
+  <label for="last-name">Last Name</label>
+  <input type="text" id="last-name" formControlName="lastName">
+  <p *ngIf="authorForm.get('lastName').errors?.required">Please fill a name.</p>
+  <label for="first-name">First Name</label>
+  <input type="text" id="first-name" formControlName="firstName">
+  <p *ngIf="authorForm.get('firstName').errors?.required">Please fill a name.</p>
+  <button type="submit" [disabled]="authorForm.invalid">Submit</button>
+</form>
